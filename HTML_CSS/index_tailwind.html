@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Catálogo – Tailwind CSS</title>
+    <!-- Tailwind CSS via CDN (ideal para clase/demo) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta
+      name="description"
+      content="Ejercicio de HTML5 + CSS3 con Tailwind: catálogo de productos responsivo, semántico y mobile-first."
+    />
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-800">
+    <!-- HEADER / NAV -->
+    <header class="bg-indigo-600 text-white">
+      <div
+        class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <a href="#" class="font-bold text-xl">Catálogo Web</a>
+        <nav aria-label="principal" class="hidden md:block">
+          <ul class="flex gap-6">
+            <li><a class="hover:underline" href="#productos">Inicio</a></li>
+            <li><a class="hover:underline" href="#buscar">Buscar</a></li>
+            <li><a class="hover:underline" href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+        <button
+          id="menuBtn"
+          class="md:hidden inline-flex items-center justify-center rounded-lg px-3 py-2 hover:bg-indigo-500/40 focus:outline-none focus:ring-2 focus:ring-white"
+        >
+          Menú
+        </button>
+      </div>
+      <nav
+        id="menuMobile"
+        class="md:hidden hidden border-t border-indigo-500/40"
+      >
+        <ul class="max-w-6xl mx-auto px-4 py-3 space-y-2">
+          <li>
+            <a
+              class="block px-2 py-2 rounded hover:bg-indigo-500/30"
+              href="#productos"
+              >Inicio</a
+            >
+          </li>
+          <li>
+            <a
+              class="block px-2 py-2 rounded hover:bg-indigo-500/30"
+              href="#buscar"
+              >Buscar</a
+            >
+          </li>
+          <li>
+            <a
+              class="block px-2 py-2 rounded hover:bg-indigo-500/30"
+              href="#contacto"
+              >Contacto</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+      <!-- BUSCAR -->
+      <section id="buscar" class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">Buscar producto</h2>
+        <form class="flex flex-col sm:flex-row gap-3">
+          <label class="sr-only" for="q">Nombre del producto</label>
+          <input
+            id="q"
+            type="text"
+            placeholder="Nombre del producto..."
+            required
+            class="w-full sm:flex-1 rounded-xl border border-slate-300 bg-white px-4 py-2 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/30"
+          />
+          <button
+            type="submit"
+            class="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-5 py-2 font-medium text-white shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          >
+            Buscar
+          </button>
+        </form>
+      </section>
+
+      <!-- PRODUCTOS -->
+      <section id="productos" aria-labelledby="titulo-productos">
+        <div class="flex items-end justify-between mb-4">
+          <h2 id="titulo-productos" class="text-2xl font-semibold">
+            Nuestros Productos
+          </h2>
+          <p class="text-sm text-slate-600">
+            Diseño <span class="font-medium">mobile‑first</span> con grid
+            responsivo
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- CARD 1 -->
+          <article
+            class="group rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 hover:shadow-md transition overflow-hidden"
+          >
+            <img
+              src="https://picsum.photos/seed/prod1/600/400"
+              alt="Producto 1"
+              class="h-48 w-full object-cover"
+            />
+            <div class="p-5 space-y-2">
+              <h3 class="text-lg font-semibold">Producto 1</h3>
+              <p class="text-sm text-slate-600">
+                Descripción breve del producto para mostrar texto y el modelo de
+                caja.
+              </p>
+              <p class="text-indigo-600 font-bold">$25.00</p>
+              <button
+                class="mt-2 w-full rounded-xl bg-indigo-600 px-4 py-2 text-white font-medium hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              >
+                Agregar al carrito
+              </button>
+            </div>
+          </article>
+
+          <!-- CARD 2 -->
+          <article
+            class="group rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 hover:shadow-md transition overflow-hidden"
+          >
+            <img
+              src="https://picsum.photos/seed/prod2/600/400"
+              alt="Producto 2"
+              class="h-48 w-full object-cover"
+            />
+            <div class="p-5 space-y-2">
+              <h3 class="text-lg font-semibold">Producto 2</h3>
+              <p class="text-sm text-slate-600">
+                Otra descripción breve del producto. Observa padding, border y
+                margin.
+              </p>
+              <p class="text-indigo-600 font-bold">$40.00</p>
+              <button
+                class="mt-2 w-full rounded-xl bg-indigo-600 px-4 py-2 text-white font-medium hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              >
+                Agregar al carrito
+              </button>
+            </div>
+          </article>
+
+          <!-- CARD 3 -->
+          <article
+            class="group rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 hover:shadow-md transition overflow-hidden"
+          >
+            <img
+              src="https://picsum.photos/seed/prod3/600/400"
+              alt="Producto 3"
+              class="h-48 w-full object-cover"
+            />
+            <div class="p-5 space-y-2">
+              <h3 class="text-lg font-semibold">Producto 3</h3>
+              <p class="text-sm text-slate-600">
+                Texto de ejemplo para practicar layout con Tailwind + semántica.
+              </p>
+              <p class="text-indigo-600 font-bold">$18.00</p>
+              <button
+                class="mt-2 w-full rounded-xl bg-indigo-600 px-4 py-2 text-white font-medium hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              >
+                Agregar al carrito
+              </button>
+            </div>
+          </article>
+
+          <!-- CARD 4 -->
+          <article
+            class="group rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 hover:shadow-md transition overflow-hidden"
+          >
+            <img
+              src="https://picsum.photos/seed/prod4/600/400"
+              alt="Producto 4"
+              class="h-48 w-full object-cover"
+            />
+            <div class="p-5 space-y-2">
+              <h3 class="text-lg font-semibold">Producto 4</h3>
+              <p class="text-sm text-slate-600">
+                Añade/quita tarjetas para trabajar flexibilidad del grid.
+              </p>
+              <p class="text-indigo-600 font-bold">$32.00</p>
+              <button
+                class="mt-2 w-full rounded-xl bg-indigo-600 px-4 py-2 text-white font-medium hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              >
+                Agregar al carrito
+              </button>
+            </div>
+          </article>
+
+          <!-- CARD 5 -->
+          <article
+            class="group rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 hover:shadow-md transition overflow-hidden"
+          >
+            <img
+              src="https://picsum.photos/seed/prod5/600/400"
+              alt="Producto 5"
+              class="h-48 w-full object-cover"
+            />
+            <div class="p-5 space-y-2">
+              <h3 class="text-lg font-semibold">Producto 5</h3>
+              <p class="text-sm text-slate-600">
+                Usa clases utilitarias para spacing, tipografía y color.
+              </p>
+              <p class="text-indigo-600 font-bold">$22.00</p>
+              <button
+                class="mt-2 w-full rounded-xl bg-indigo-600 px-4 py-2 text-white font-medium hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              >
+                Agregar al carrito
+              </button>
+            </div>
+          </article>
+
+          <!-- CARD 6 -->
+          <article
+            class="group rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 hover:shadow-md transition overflow-hidden"
+          >
+            <img
+              src="https://picsum.photos/seed/prod6/600/400"
+              alt="Producto 6"
+              class="h-48 w-full object-cover"
+            />
+            <div class="p-5 space-y-2">
+              <h3 class="text-lg font-semibold">Producto 6</h3>
+              <p class="text-sm text-slate-600">
+                Practica mobile‑first modificando los breakpoints.
+              </p>
+              <p class="text-indigo-600 font-bold">$29.00</p>
+              <button
+                class="mt-2 w-full rounded-xl bg-indigo-600 px-4 py-2 text-white font-medium hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              >
+                Agregar al carrito
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONTACTO -->
+      <section id="contacto" class="mt-12" aria-labelledby="titulo-contacto">
+        <h2 id="titulo-contacto" class="text-2xl font-semibold mb-4">
+          Contáctanos
+        </h2>
+        <form class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="flex flex-col gap-1">
+            <label for="nombre" class="text-sm font-medium">Nombre</label>
+            <input
+              id="nombre"
+              type="text"
+              placeholder="Tu nombre"
+              required
+              class="rounded-xl border border-slate-300 bg-white px-4 py-2 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/30"
+            />
+          </div>
+          <div class="flex flex-col gap-1">
+            <label for="correo" class="text-sm font-medium">Correo</label>
+            <input
+              id="correo"
+              type="email"
+              placeholder="ejemplo@mail.com"
+              required
+              class="rounded-xl border border-slate-300 bg-white px-4 py-2 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/30"
+            />
+          </div>
+          <div class="sm:col-span-2 flex flex-col gap-1">
+            <label for="mensaje" class="text-sm font-medium">Mensaje</label>
+            <textarea
+              id="mensaje"
+              rows="4"
+              placeholder="Escribe tu mensaje..."
+              class="rounded-xl border border-slate-300 bg-white px-4 py-2 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/30"
+            ></textarea>
+          </div>
+          <div class="sm:col-span-2">
+            <button
+              type="submit"
+              class="w-full sm:w-auto rounded-xl bg-indigo-600 px-6 py-2 text-white font-medium shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              Enviar
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-12 bg-slate-900 text-slate-200">
+      <div class="max-w-6xl mx-auto px-4 py-6 text-center">
+        <p>&copy; 2025 Catálogo Web. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- JS mínimo para menú móvil -->
+    <script>
+      const btn = document.getElementById("menuBtn");
+      const menu = document.getElementById("menuMobile");
+      btn?.addEventListener("click", () => menu.classList.toggle("hidden"));
+    </script>
+  </body>
+</html>
